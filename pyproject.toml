@@ -23,6 +23,7 @@ toml="^0.10.2"
 nitpick = "*"
 pre-commit = "*"
 pre-commit-hooks = "*"
+wemake-python-styleguide = "*"
 
 # Test Suite
 httpx = "^0.22"

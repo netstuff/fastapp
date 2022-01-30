@@ -1,0 +1,25 @@
+root = True
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = space
+insert_final_newline = True
+trim_trailing_whitespace = True
+
+[*.py]
+max_line_length = 100
+
+[*.xml]
+insert_final_newline = False
+
+[*.{js,json}]
+indent_size = 2
+max_line_length = 120
+
+[*.{yml,yaml,md}]
+indent_size = 2
+
+[Makefile]
+indent_style = tab
