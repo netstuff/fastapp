@@ -1,3 +1,3 @@
-# Python Template
+# Python template
 
-Python base project
+Python boilerplate project

@@ -1,0 +1,52 @@
+[tool.poetry]
+name = "x5d_template_fastapi"
+version = "0.1.0"
+description = "X5D FastAPI boilerplate"
+authors = ["X5 Python Community"]
+readme = "README.md"
+
+[tool.nitpick]
+style = "git@scm.x5.ru:YuryAndreev/nitpick.git/common-python.toml"
+cache = "never"
+
+[tool.poetry.dependencies]
+fastapi = "^0.73.0"
+python = "^3.9"
+toml="^0.10.2"
+
+[tool.poetry.dev-dependencies]
+pre-commit = "*"
+pre-commit-hooks = "*"
+
+# Test Suite
+pytest = "^6.2"
+pytest-asyncio = "^0.17"
+pytest-cov = "^3.0"
+
+# Editor integration
+python-lsp-server = "*"
+pyls-isort = "*"
+pyls-flake8 = "*"
+mypy-ls = "*"
+
+# (Static) Code Analyzers
+darglint = "*"
+flake8 = "*"
+flake8-bandit = "*"
+flake8-broken-line = "*"
+flake8-bugbear = "*"
+flake8-comprehensions = "*"
+flake8-debugger = "*"
+flake8-docstrings = "*"
+flake8-eradicate = "*"
+flake8-fixme = "*"
+flake8-isort = "*"
+flake8-logging-format = "*"
+flake8-pytest-style = "*"
+flake8-quotes = "*"
+flake8-rst-docstrings = "*"
+flake8-string-format = "*"
+flake8_commas = "*"
+mypy = "*"
+pycodestyle = "*"
+pydocstyle = "*"
