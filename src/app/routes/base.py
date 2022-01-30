@@ -7,7 +7,7 @@ from ..settings import Settings, get_settings
 from ..schemas.base import ApiStatusResponse
 
 
-router = APIRouter(prefix=None)
+router = APIRouter(prefix="")
 
 
 @router.get("/", response_model=ApiStatusResponse, tags=["common"])

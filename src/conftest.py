@@ -1,10 +1,16 @@
 """Pytest root configuration."""
 
+import typing as T
+
 import pytest
-from fastapi.testclient import TestClient
+from httpx import AsyncClient
+
+from app.main import app
 
 
-@pytest.fixture(scope='module')
-def client() -> Generator:
+@pytest.fixture
+@pytest.mark.asyncio
+async def client() -> T.Generator:
     """Asynchronious HTTP-client."""
-    yield TestClient(app)
+    async with AsyncClient(app=app, base_url="http://test") as client:
+        yield client
