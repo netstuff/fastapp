@@ -6,7 +6,7 @@ from functools import lru_cache
 import toml
 from pydantic import BaseModel, BaseSettings
 
-from ..constants import ROOT_DIR
+from app.constants import ROOT_DIR
 
 
 POETRY: T.Dict[str, str] = toml.load(ROOT_DIR / "pyproject.toml")["tool"]["poetry"]
@@ -26,10 +26,10 @@ class Settings(BaseSettings):
 
     class Config:
         env_file = ".env"
-        env_prefix = POETRY["name"].upper().replace('-', '_')
+        env_prefix = POETRY["name"].upper().replace("-", "_")
 
 
 @lru_cache()
-def get_settings():
+def get_settings() -> Settings:
     """Get settings."""
     return Settings()

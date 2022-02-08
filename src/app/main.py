@@ -1,8 +1,7 @@
 """Application main module."""
 
+from app.routes.base import router as base_router
 from fastapi import FastAPI
-
-from .routes.base import router as base_router
 
 
 app = FastAPI()
@@ -10,13 +9,11 @@ app = FastAPI()
 app.include_router(base_router)
 
 
-@app.on_event('startup')
-async def startup_event():
+@app.on_event("startup")
+async def startup_event() -> None:
     """On system starting up."""
-    pass
 
 
-@app.on_event('shutdown')
-async def shutdown_event():
+@app.on_event("shutdown")
+async def shutdown_event() -> None:
     """On system shutdown."""
-    pass
