@@ -2,6 +2,7 @@
 
 import typing as T
 from functools import lru_cache
+from pathlib import Path
 
 import toml
 from pydantic import BaseModel, BaseSettings
@@ -9,7 +10,8 @@ from pydantic import BaseModel, BaseSettings
 from app.constants import ROOT_DIR
 
 
-POETRY: T.Dict[str, str] = toml.load(ROOT_DIR / "pyproject.toml")["tool"]["poetry"]
+PYPROJ: Path = ROOT_DIR / "pyproject.toml"
+POETRY: T.Dict[str, str] = toml.load(PYPROJ)["tool"]["poetry"]
 
 
 class PoetryProject(BaseModel):

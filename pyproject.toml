@@ -37,6 +37,12 @@ pyls-isort = "*"
 pyls-flake8 = "*"
 mypy-ls = "*"
 
+# Code formatters
+autoflake = "*"
+autopep8 = "*"
+docformatter = "*"
+language-formatters-pre-commit-hooks = "*"
+
 # (Static) Code Analyzers
 black = "*"
 darglint = "*"
@@ -59,4 +65,6 @@ flake8_commas = "*"
 mypy = "*"
 pycodestyle = "*"
 pydocstyle = "*"
-types-toml = "^0.10.3"
+
+# Typing stubs
+types-toml = "*"
