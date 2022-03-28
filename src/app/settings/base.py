@@ -5,7 +5,13 @@ from functools import lru_cache
 from pathlib import Path
 
 import toml
-from pydantic import BaseModel, BaseSettings, PostgresDsn, validator, ValidationError
+from pydantic import (
+    BaseModel,
+    BaseSettings,
+    PostgresDsn,
+    ValidationError,
+    validator,
+)
 
 from app.constants import ROOT_DIR
 
@@ -24,13 +30,13 @@ class PoetryProject(BaseModel):
 class PostgresSettings(BaseModel):
     """PostgreSQL settings."""
 
-    dsn: PostgresDsn = "postgresql+asyncpg://user:password@localhost/db"
+    dsn: PostgresDsn
 
     @validator("dsn")
-    def validate_dsn(cls, value: PostgresDsn):
+    def validate_dsn(cls, value: PostgresDsn) -> PostgresDsn:
         """Check DSN async option."""
-        if "+asyncpg" not in value:
-            raise ValidationError("Should to use asyncpg option in Postgres DSN")
+        if "asyncpg" not in value.scheme:
+            raise ValueError("You should to use asyncpg option in DSN scheme")
 
         return value
 
@@ -39,10 +45,10 @@ class Settings(BaseSettings):
     """Base settings."""
 
     poetry: PoetryProject = PoetryProject(**POETRY)
-    postgres: PostgresSettings = PostgresSettings()
+    postgres: PostgresSettings
 
     class Config:
-        env_prefix = POETRY["name"].upper().replace("-", "_")
+        env_file = ".env"
         env_nested_delimiter = "__"
 
 
