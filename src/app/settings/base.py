@@ -5,7 +5,7 @@ from functools import lru_cache
 from pathlib import Path
 
 import toml
-from pydantic import BaseModel, BaseSettings, PostgresDsn, validator, ValidationError
+from pydantic import BaseModel, BaseSettings, PostgresDsn, ValidationError, validator
 
 from app.constants import ROOT_DIR
 
@@ -27,7 +27,7 @@ class PostgresSettings(BaseModel):
     dsn: PostgresDsn = "postgresql+asyncpg://user:password@localhost/db"
 
     @validator("dsn")
-    def validate_dsn(cls, value: PostgresDsn):
+    def validate_dsn(cls, value: PostgresDsn) -> PostgresDsn:
         """Check DSN async option."""
         if "+asyncpg" not in value:
             raise ValidationError("Should to use asyncpg option in Postgres DSN")

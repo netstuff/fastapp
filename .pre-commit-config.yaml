@@ -3,7 +3,7 @@ fail_fast: false
 repos:
 - repo: local
   hooks:
-  - id: nitpick
+  - id: nitpick-fix
     name: Nitpick
     description: Enforce the same configuration (flake8, isort, mypy etc.) across multiple Python projects
     entry: flake8 --select=NIP -j 0

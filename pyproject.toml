@@ -6,8 +6,15 @@ authors = ["X5 Python Community"]
 readme = "README.md"
 
 [tool.nitpick]
-style = "https://raw.githubusercontent.com/wemake-services/wemake-python-styleguide/master/styles/nitpick-style-wemake.toml"
 cache = "never"
+style = [
+    "https://raw.githubusercontent.com/wemake-services/wemake-python-styleguide/master/styles/file-structure.toml",
+    "https://raw.githubusercontent.com/wemake-services/wemake-python-styleguide/master/styles/flake8.toml",
+    "https://raw.githubusercontent.com/wemake-services/wemake-python-styleguide/master/styles/isort.toml",
+    "https://raw.githubusercontent.com/wemake-services/wemake-python-styleguide/master/styles/darglint.toml",
+    "https://raw.githubusercontent.com/wemake-services/wemake-python-styleguide/master/styles/mypy.toml",
+    "https://raw.githubusercontent.com/wemake-services/wemake-python-styleguide/master/styles/poetry.toml",
+]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"

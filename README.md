@@ -1,6 +1,6 @@
-# Python template.
+# Python FastAPI template.
 
-Python boilerplate project
+FastAPI boilerplate project
 
 
 # Project structure.
@@ -16,6 +16,11 @@ Python boilerplate project
     │   ├── constants.py                    # App constants
     │   ├── main.py                         # App entrypoint
     │   ├── manage.py                       # CLI-utility
+    │   ├── db                              # Database module
+    │   │   ├── models                      # Database models
+    │   │   ├── repositories                # Database repositoiries
+    │   │   ├── connections.py              # App database connectors
+    │   │   └── postgres.py                 # Postgres connections
     │   ├── routes                          # API routes
     │   │   ├── dependencies                # API dependencies
     │   │   └── base.py                     # Base endpoints
@@ -26,11 +31,15 @@ Python boilerplate project
     ├── conftest.py                         # Pytest entrypoint
     ├── tasks                               # Periodical tasks
     └── tests                               # Tests
+        ├── utils                           # Utils for testing
+        │   └── db.py                       # Database utils
+        ├── conftest.py                     # Pytest configuration
         └── test_api.py                     # API tests
 ```
 
 
-# Installation.
+# Initialization.
+At first you should to initialize a project.
 ```
 poetry install
 poetry run pre-commit install
