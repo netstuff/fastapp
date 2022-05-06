@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "x5d_template_fastapi"
+name = "fastapp"
 version = "0.1.0"
-description = "X5D FastAPI boilerplate"
-authors = ["X5 Python Community"]
+description = "FastAPI boilerplate"
+authors = ["Yury Andreev Jr. <andreev.jr@gmail.com>"]
 readme = "README.md"
 
 [tool.nitpick]
